@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Div } from "./Home.styled";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -6,7 +7,7 @@ const Home = () => {
     navigate("/contact");
   };
   return (
-    <div>
+    <Div>
       <h1>Hi, I’m Barath T, a Full Stack Developer.</h1>
       <p>
         I am a open-minded individual ready to learn, experience and improve my
@@ -14,7 +15,7 @@ const Home = () => {
         challenges.
       </p>
       <button onClick={handleClick}>Hire Me</button>
-    </div>
+    </Div>
   );
 };
 
