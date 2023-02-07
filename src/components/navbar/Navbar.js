@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
-
 import Logo from "../svgs/Logo";
 import Github from "../svgs/Github";
 
-import { Div } from "./Navbar.styled.js";
+import { Div, NavLink } from "./Navbar.styled.js";
 
 const Navbar = () => {
   return (
@@ -11,15 +9,29 @@ const Navbar = () => {
       <Logo className="logo" styles={{ width: "50px", height: "50px" }} />
       <span className="name-available">
         <span>Barath T.</span>
-        <span>Available</span>
+        <span className="available">
+          Available <strong>June 2023</strong>
+        </span>
       </span>
       <span className="pages">
-        <Link to="/">Home</Link>
-        <Link to="/Skills">Skills</Link>
-        <Link to="/Projects">Projects</Link>
-        <Link to="/Contact">Contact</Link>
-        <Link to="/Blog">Blog</Link>
-        <Github styles={{ width: "25px", height: "25px" }} color="white" />
+        <NavLink to="/" inputcolor="">
+          Home
+        </NavLink>
+        <NavLink to="/Skills" inputcolor="#fee16d">
+          Skills
+        </NavLink>
+        <NavLink to="/Projects" inputcolor="#004fff">
+          Projects
+        </NavLink>
+        <NavLink to="/Contact" inputcolor="#de7f2b">
+          Contact
+        </NavLink>
+        <NavLink to="/Blog" inputcolor="#b86bff">
+          Blog
+        </NavLink>
+        <a className="github" href="/">
+          <Github />
+        </a>
       </span>
     </Div>
   );

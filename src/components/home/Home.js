@@ -1,20 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import { Div } from "./Home.styled";
+import { Div, Button } from "./Home.styled";
 
 const Home = () => {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/contact");
+  const handleClick = (to) => {
+    navigate(`/${to}`);
   };
   return (
     <Div>
-      <h1>Hi, I’m Barath T, a Full Stack Developer.</h1>
-      <p>
-        I am a open-minded individual ready to learn, experience and improve my
-        skills to compete in an industrial environment and open to take on new
-        challenges.
-      </p>
-      <button onClick={handleClick}>Hire Me</button>
+      <div className="hi">
+        <h1>
+          Hi, I’m Barath T,
+          <span>
+            a <span className="role">Full Stack Developer.</span>
+          </span>
+        </h1>
+        <p className="content">
+          I am a open-minded individual ready to learn, experience and improve
+          my skills to compete in an industrial environment and open to take on
+          new challenges.
+        </p>
+        <Button onClick={() => handleClick("contact")}>Hire Me</Button>
+        <Button onClick={() => handleClick("projects")}>See My Work</Button>
+        <p className="findme"> You can find me on <a href="/barath-t">Github</a> and <a href="/barath-t">LinkedIn</a>.</p>
+      </div>
     </Div>
   );
 };

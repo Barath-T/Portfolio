@@ -1,19 +1,21 @@
 import { Link } from "react-router-dom";
 
+import { Div } from "./Footer.styled";
+
 const Footer = () => {
   return (
-    <div>
-      <p>
+    <Div>
+      <p className="links">
         <Link to="/">Home</Link>
-        <em>.</em>
+        <em>•</em>
         <a href="/">Github</a>
-        <em>.</em>
+        <em>•</em>
         <a href="/">Linked In</a>
-        <em>.</em>
+        <em>•</em>
         <Link to="/contact">Contact</Link>
       </p>
-      <p>Copyright©2023 Made by Barath</p>
-    </div>
+      <p className="cp">Copyright©2023 Made by Barath</p>
+    </Div>
   );
 };
 

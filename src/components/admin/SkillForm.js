@@ -24,7 +24,7 @@ const SkillForm = () => {
   const [tools, setTools] = useState([]);
 
   const handleTools = (tool) => {
-    const found = tools.find((t) => t.name === tool.name);
+    //const found = tools.find((t) => t.name === tool.name);
     setTools([...tools, tool]);
   };
   const onSubmit = async (event) => {
