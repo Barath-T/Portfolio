@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Div, Button } from "./Home.styled";
 
-const Home = () => {
+const Home = ({ details }) => {
   const navigate = useNavigate();
   const handleClick = (to) => {
     navigate(`/${to}`);
@@ -22,7 +22,7 @@ const Home = () => {
         </p>
         <Button onClick={() => handleClick("contact")}>Hire Me</Button>
         <Button onClick={() => handleClick("projects")}>See My Work</Button>
-        <p className="findme"> You can find me on <a href="/barath-t">Github</a> and <a href="/barath-t">LinkedIn</a>.</p>
+        <p className="findme"> You can find me on <a href={details.github}>Github</a> and <a href={details.linkedin}>LinkedIn</a>.</p>
       </div>
     </Div>
   );

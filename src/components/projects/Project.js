@@ -28,6 +28,9 @@ const Project = () => {
           })
          }
         </div>
+        <div className="gitlink">
+          Checkout the project on <a href={project.github}>Github</a>
+        </div>
         <div className="screenshot-portion">
             {project.imgs.map(image=>{
               return <img key={image.name} src={image.img} alt={image.name} />;

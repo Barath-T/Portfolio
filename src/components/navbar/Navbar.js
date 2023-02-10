@@ -1,17 +1,21 @@
+import { Link } from "react-router-dom";
+
 import Logo from "../svgs/Logo";
 import Github from "../svgs/Github";
 
 import { Div, NavLink } from "./Navbar.styled.js";
 
-const Navbar = () => {
+const Navbar = ({ details }) => {
   return (
     <Div>
+      <Link to="/">
       <Logo className="logo" styles={{ width: "50px", height: "50px" }} />
+      </Link>
       <span className="name-available">
         <span>Barath T.</span>
-        <span className="available">
-          Available <strong>June 2023</strong>
-        </span>
+        <Link to="/contact" className="available">
+          Available <strong>{(new Date(details.available)).toLocaleString("default", { month: "short" }) + " " + (new Date(details.available)).getFullYear()} </strong>
+        </Link>
       </span>
       <span className="pages">
         <NavLink to="/" inputcolor="">
@@ -29,7 +33,7 @@ const Navbar = () => {
         <NavLink to="/Blog" inputcolor="#b86bff">
           Blog
         </NavLink>
-        <a className="github" href="/">
+        <a className="github" href={details.github}>
           <Github />
         </a>
       </span>

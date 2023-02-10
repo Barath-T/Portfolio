@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
-  
+  flex:1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,6 +58,57 @@ export const Div = styled.div`
     }
     span img{
       height:40px;
+    }
+  }
+  
+  & .gitlink{
+      margin-bottom: 5rem;
+      font-size: 2rem;
+      color: #ffffff90;
+      
+    a{ 
+      text-decoration: none;
+      color: #ffffff90;
+      position: relative;
+      
+      transition:color ease-out 0.5s;
+
+      &::before{
+        content:"";
+
+        position: absolute;
+        bottom:0;
+        left: 0;
+        right: 0;
+        
+        height: 4px;
+        border-radius: 9px;
+        background-color: #ffffff7f;
+      }
+      &::after{
+        content:"";
+
+        position: absolute;
+        bottom:0;
+        left: 0;
+        right: 0;
+        
+        height: 4px;
+        border-radius: 9px;
+        background-color: ${props=>`${props.mycolor}`};
+
+        transform: scaleX(0);
+        transform-origin: bottom left;
+
+        transition:transform ease-out 0.5s;
+      }
+      &:hover::after{
+        transform: scaleX(1);
+        transform-origin:bottom right;
+      }
+      &:hover{
+        color:white;
+      }
     }
   }
   

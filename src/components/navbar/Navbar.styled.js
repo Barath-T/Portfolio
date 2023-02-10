@@ -25,6 +25,7 @@ export const Div = styled.div`
     color: rgba(255, 255, 255, 0.5);
     background-color: rgba(255, 255, 255, 0.05);
     font-size: 1rem;
+    text-decoration: none;
 
     padding: 0.25rem 0.75rem;
     margin-left: 1rem;

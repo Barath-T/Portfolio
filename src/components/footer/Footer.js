@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 
 import { Div } from "./Footer.styled";
 
-const Footer = () => {
+const Footer = ({ details }) => {
   return (
     <Div>
       <p className="links">
         <Link to="/">Home</Link>
         <em>•</em>
-        <a href="/">Github</a>
+        <a href={details.github}>Github</a>
         <em>•</em>
-        <a href="/">Linked In</a>
+        <a href={details.linkedin}>Linked In</a>
         <em>•</em>
         <Link to="/contact">Contact</Link>
       </p>
