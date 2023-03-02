@@ -13,7 +13,10 @@ import Project from "./components/projects/Project";
 
 import Contact from "./components/contact/Contact";
 
-import Blog from "./components/blog/Blog";
+import BlogLayout from "./components/blog/BlogLayout";
+import BlogHome from "./components/blog/BlogHome";
+import Article from "./components/blog/Article";
+import Login from "./components/blog/Login";
 
 import Admin from "./components/admin/Admin";
 import SkillForm from "./components/admin/SkillForm";
@@ -37,22 +40,31 @@ const App = () => {
     <>
       <GlobalStyled />
         <Routes>
+
           <Route path="/" element={<Layout details={details}/>}>
-            <Route index element={<Home details={{github: details.github, linkedin: details.linkedin}}/>} />
-            <Route path="skills" element={<Skills />}>
-              <Route path=":title" element={<Skill />} />
-            </Route>
-            <Route path="projects" element={<Projects />}>
-              <Route path=":title" element={<Project />} />
-            </Route>
-            <Route path="contact" element={<Contact details={{email: details.email, github: details.github, linkedin: details.linkedin}}/>} />
-            <Route path="blog" element={<Blog />} />
+              <Route index element={<Home details={{github: details.github, linkedin: details.linkedin}}/>} />
+              <Route path="skills" element={<Skills />}>
+                <Route path=":title" element={<Skill />} />
+              </Route>
+              <Route path="projects" element={<Projects />}>
+                <Route path=":title" element={<Project />} />
+              </Route>
+              <Route path="contact" element={<Contact details={{email: details.email, github: details.github, linkedin: details.linkedin}}/>} />
           </Route>
+
           <Route path="/admin/" element={<Admin />}>
             <Route path="skills" element={<SkillForm />} />
             <Route path="projects" element={<ProjectForm />} />
             <Route path="details" element={<DetailsForm />} />
           </Route>
+
+          <Route path="blog"element={<BlogLayout />}>
+            <Route index element={<BlogHome />} />
+            <Route path=":id" element={<Article />} />
+          </Route>
+
+          <Route path="/login" element={ <Login/> }/>
+
         </Routes>
     </>
   );

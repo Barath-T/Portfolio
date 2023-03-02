@@ -5,7 +5,6 @@ const useTextUpdate = () => {
 
   const onChange = (event) => {
     setValue(event.target.value);
-    console.log(value);
   };
 
   return { value, onChange };
