@@ -1,18 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
 import useTextUpdate from "../../myhooks/useTextUpdate"; 
 
-import loginService from "../../services/login";
-import articleService from "../../services/article";
+import blogService from "../../services/blog";
 
 const Login = ()=>{
     const username = useTextUpdate();
     const password = useTextUpdate();
+    const navigate = useNavigate();
     
     const handleLogin = async(e)=>{
         e.preventDefault();
-        const response = await loginService.login({username:username.value, password:password.value});
+        const response = await blogService.login({username:username.value, password:password.value});
 
-        articleService.setToken(response.token);
+        blogService.setToken(response.token);
         window.localStorage.setItem("loggedInUser", JSON.stringify(response));
+        navigate("/Blog");
 
     };
     return(
