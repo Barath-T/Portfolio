@@ -13,6 +13,9 @@ export const GlobalStyled = createGlobalStyle`
         font-size:1em;
         font-weight:400;
     }
+    body::-webkit-scrollbar{
+        display: none;
+    }
     #root{
         height:100%;
         display:flex;

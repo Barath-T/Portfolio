@@ -7,7 +7,7 @@ const useTextUpdate = () => {
     setValue(event.target.value);
   };
 
-  return { value, onChange };
+  return { value, setValue, onChange };
 };
 
 export default useTextUpdate;

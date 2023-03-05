@@ -17,6 +17,7 @@ import BlogLayout from "./components/blog/BlogLayout";
 import BlogHome from "./components/blog/BlogHome";
 import Article from "./components/blog/Article";
 import Login from "./components/blog/Login";
+import Post from "./components/blog/Post";
  
 import Admin from "./components/admin/Admin";
 import SkillForm from "./components/admin/SkillForm";
@@ -60,10 +61,11 @@ const App = () => {
 
           <Route path="blog"element={<BlogLayout />}>
             <Route index element={<BlogHome />} />
+            <Route path="login" element={<Login />} />
+            <Route path="post" element={<Post />} />
             <Route path=":id" element={<Article />} />
           </Route>
 
-          <Route path="/login" element={ <Login/> }/>
 
         </Routes>
     </>
