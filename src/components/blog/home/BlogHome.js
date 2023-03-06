@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import blogService from "../../services/blog";
+import blogService from "services/blog";
 
 const ArticleCard = ({ article })=>{
     return (
@@ -13,23 +13,33 @@ const ArticleCard = ({ article })=>{
 }
 const BlogHome = ()=>{
     const [articles, setArticles] = useState([]);
-    const [limit, setLimit] = useState(4);
+    const [limit, setLimit] = useState(2);
+    const [prev, setPrev] = useState(0);
 
     useEffect(()=>{
         (async()=>{
-            setArticles(await blogService.getArticles(limit));
+            const data = await blogService.getArticles(limit);
+            if(data.length === prev){
+                setLimit(0);
+            }
+            else{
+                setArticles(data);
+            }
         })();
-    }, [limit]);
+    }, [limit, prev]);
 
     const onSeemore = async()=>{
-        setLimit(limit+4);
-        console.log(limit);
+        setPrev(articles.length);
+        setLimit(limit+2);
     };
 
     return (
         <div style={{display: "flex", justifyContent: "right", marginRight: "2rem"}}>
             {articles.map((article=><ArticleCard key={ article._id } article={ article } />))}
-            <button onClick={ onSeemore }>see more</button>
+            {limit
+            ? <button onClick={ onSeemore }>see more</button>
+            : null
+            }
         </div>
     );
 };

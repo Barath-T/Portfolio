@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-import Logo from "../svgs/Logo";
+import Logo from "components/svgs/Logo";
 
 import { Link } from "react-router-dom";
 import {Div} from "./BlogNav.styled";
-import {NavLink} from "../navbar/Navbar.styled";
+import {NavLink} from "components/navbar/Navbar.styled";
 
-import blogService from "../../services/blog"; 
+import blogService from "services/blog"; 
 
 
 const BlogNav = ({ user, logout})=>{

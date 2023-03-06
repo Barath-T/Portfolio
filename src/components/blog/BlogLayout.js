@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
-import blogService from "../../services/blog";
-import BlogNav from "./BlogNav";
+import blogService from "services/blog";
+import BlogNav from "./nav/BlogNav";
 
 const Blog = ()=>{
     const [user, setUser] = useState(null);

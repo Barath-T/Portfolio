@@ -1,8 +1,8 @@
 import { useOutletContext, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import blogService from "../../services/blog";
-import useTextUpdate from "../../myhooks/useTextUpdate";
+import blogService from "services/blog";
+import useTextUpdate from "myhooks/useTextUpdate";
 
 const Comments = ({ article, setArticle, userLogged})=>{
     const commentField = useTextUpdate();

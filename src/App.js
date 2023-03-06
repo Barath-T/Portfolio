@@ -14,10 +14,10 @@ import Project from "./components/projects/Project";
 import Contact from "./components/contact/Contact";
 
 import BlogLayout from "./components/blog/BlogLayout";
-import BlogHome from "./components/blog/BlogHome";
-import Article from "./components/blog/Article";
-import Login from "./components/blog/Login";
-import Post from "./components/blog/Post";
+import BlogHome from "./components/blog/home/BlogHome";
+import Article from "./components/blog/article/Article";
+import Login from "./components/blog/others/Login";
+import Post from "./components/blog/others/Post";
  
 import Admin from "./components/admin/Admin";
 import SkillForm from "./components/admin/SkillForm";

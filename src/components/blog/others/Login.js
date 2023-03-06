@@ -1,9 +1,9 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 
-import useTextUpdate from "../../myhooks/useTextUpdate"; 
+import useTextUpdate from "myhooks/useTextUpdate"; 
 
-import blogService from "../../services/blog";
+import blogService from "services/blog";
 
 const Login = ()=>{
     const username = useTextUpdate();

@@ -11,7 +11,9 @@
 "skipLibCheck": true,
 "moduleResolution": "node",
 "noUnusedLocals": false,
-"noUnusedParameters": false
+"noUnusedParameters": false,
+"baseUrl": "src"
 },
+"include": ["src"],
 "exclude": ["node_modules"]
 }

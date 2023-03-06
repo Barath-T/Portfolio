@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-import useTextUpdate from "../../myhooks/useTextUpdate";    
-import useImageUpdate from "../../myhooks/useImageUpdate";
+import useTextUpdate from "myhooks/useTextUpdate";    
+import useImageUpdate from "myhooks/useImageUpdate";
 
-import blogService from "../../services/blog";
+import blogService from "services/blog";
 
 const Post = ()=>{
     const title = useTextUpdate();
