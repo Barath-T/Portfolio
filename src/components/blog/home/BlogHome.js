@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
+import { Div, ArticlesDiv, ArticleLink } from "./BlogHome.styled";
+import { Button } from "components/home/Home.styled";
 
 import blogService from "services/blog";
 
 const ArticleCard = ({ article })=>{
     return (
-        <Link to={`/blog/${article._id}`}>
-            <h4>{ article.title }</h4>
+        <ArticleLink to={`/blog/${article._id}`}>
+            <h1>{ article.title }</h1>
             <p>{ article.desc }</p>
-        </Link>
+        </ArticleLink>
     );
 }
 const BlogHome = ()=>{
@@ -34,13 +36,15 @@ const BlogHome = ()=>{
     };
 
     return (
-        <div style={{display: "flex", justifyContent: "right", marginRight: "2rem"}}>
-            {articles.map((article=><ArticleCard key={ article._id } article={ article } />))}
-            {limit
-            ? <button onClick={ onSeemore }>see more</button>
-            : null
+        <Div>
+            <ArticlesDiv>
+                {articles.map((article=><ArticleCard key={ article._id } article={ article } />))}
+            </ArticlesDiv>
+            {limit 
+                ? <Button onClick={ onSeemore }>see more</Button>
+                : null
             }
-        </div>
+        </Div>
     );
 };
 
