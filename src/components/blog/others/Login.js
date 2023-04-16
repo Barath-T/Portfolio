@@ -22,7 +22,7 @@ const Login = ()=>{
         e.preventDefault();
         const response = await blogService.login({username:username.value, password:password.value});
         window.localStorage.setItem("loggedInUser", JSON.stringify(response));
-        navigate(-2);
+        navigate(-1);
         window.location.reload();
     };
     return(
